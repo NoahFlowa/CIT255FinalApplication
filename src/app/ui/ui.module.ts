@@ -4,11 +4,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, ContentComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent, ContentComponent, LayoutComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    LayoutComponent
   ]
 })
 export class UiModule { }
