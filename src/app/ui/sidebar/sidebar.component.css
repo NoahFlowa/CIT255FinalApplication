@@ -1,0 +1,11 @@
+body {
+    background-color: #343a40 !important;
+    color: #fff;
+    text-align: center;
+}
+
+h5 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(204, 204, 204);
+}
