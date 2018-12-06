@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button type="button" class="btn btn-dark space" data-apple-music-skip-to-previous-item><i class="fa fa-backward"></i></button>
-    <button type="button" class="btn btn-dark space" data-apple-music-pause><i class="fa fa-pause"></i></button>
-    <button type="button" class="btn btn-dark space" data-apple-music-play><i class="fa fa-play"></i></button>
-    <button type="button" class="btn btn-dark space" data-apple-music-skip-to-next-item><i class="fa fa-forward"></i></button>
+    <button type="button" class="btn btn-dark space" aria-label="Backward" data-apple-music-skip-to-previous-item><i class="fa fa-backward"></i></button>
+    <button type="button" class="btn btn-dark space" aria-label="Play" data-apple-music-play><i class="fa fa-play"></i></button>
+    <button type="button" class="btn btn-dark space" aria-label="Play" data-apple-music-pause><i class="fa fa-pause"></i></button>
+    <button type="button" class="btn btn-dark space" aria-label="Forward" data-apple-music-skip-to-next-item><i class="fa fa-forward"></i></button>
     <!-- Disable autoplay -->
     <button type="button" class="btn btn-dark space" data-apple-music-set-queue="1025210938" data-apple-music-autoplay="false"><i class="fa fa-music"></i></button>
 
@@ -13,17 +13,26 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="navbar-brand space" href="#">
-                    <img src="/src/assets/img/NF512x512.png" height="36px" width="36px" style="text-align: left;" name="albumnImage">
+                    <img data-apple-music-now-playing="artworkURL" height="36px" width="36px" style="text-align: left;" name="albumnImage">
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Song Name: <span class="sr-only">(current)</span></a>
+                <p class="nav-link">Song Name: <span class="sr-only">(current)</span></p>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Name Here</a>
+                <p class="nav-link" data-apple-music-now-playing id="songName"></p>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">0:00 | 0:00</a>
+                <p class="nav-link">Artist: </p>
+            </li>
+            <li class="nav-item">
+                <p class="nav-link" data-apple-music-now-playling="artistName"></p>
+            </li>
+            <li class="nav-item">
+                <p class="nav-link" data-apple-music-current-playback-time></p>
+            </li>
+            <li class="nav-item">
+                <p class="nav-link" data-apple-music-current-playback-duration></p>
             </li>
         </ul>
         <span class="navbar-text">
@@ -31,3 +40,7 @@
         </span>
     </div>
 </nav>
+
+<script>
+    document.getElementById("songName").size = 15;
+</script>

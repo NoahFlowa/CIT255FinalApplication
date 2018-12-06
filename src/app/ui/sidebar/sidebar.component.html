@@ -1,24 +1,34 @@
 <body class="mx-auto">
   <div class="btn-group" role="group" aria-label="Basic example">
-    <a class="btn btn-outline-primary" href="#" role="button" id="apple-music-authorize"><i class="fa fa-sign-in"></i></a>
-    <a class="btn btn-outline-primary" href="#" role="button" id="apple-music-unauthorize"><i class="fa fa-sign-in"></i></a>
-    <button class="btn btn-outline-light" type="submit"><i class="fa fa-cog"></i></button>
+    <button class="btn btn-outline-primary" aria-label="Sign In to Apple Music" id="apple-music-authorize"><i class="fa fa-sign-in"></i></button>
+    <button class="btn btn-outline-primary" aria-label="Sign Out of Apple Music" id="apple-music-unauthorize"><i class="fa fa-sign-in"></i></button>
+    <button class="btn btn-outline-light" type="submit">
+      <i class="fa fa-cog"></i>
+    </button>
   </div>
-  <br>
+  <br />
   <h5>SEARCH</h5>
   <div class="btn-group" role="group" aria-label="Basic example">
     <button class="btn btn-outline-primary" type="submit">Apple Music</button>
     <button class="btn btn-outline-primary" type="submit">My Library</button>
   </div>
-  <br>
-  <br>
+  <br />
+  <br />
   <div class="btn-group-vertical" role="group" aria-label="Basic example">
     <form class="form-inline">
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+          <span class="input-group-text" id="basic-addon1"
+            ><i class="fa fa-search"></i
+          ></span>
         </div>
-        <input type="text" class="form-control" placeholder="Search . . ." aria-label="Username" aria-describedby="basic-addon1">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search . . ."
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
       </div>
     </form>
 
@@ -29,7 +39,7 @@
     <h5>MY LIBRARY</h5>
     <button class="btn btn-outline-light" type="submit">Recently Added</button>
     <button class="btn btn-outline-light" type="submit">Songs</button>
-    <button class="btn btn-outline-light" type="submit">Albumns</button>
+    <button class="btn btn-outline-light" type="submit">Albums</button>
     <button class="btn btn-outline-light" type="submit">Artists</button>
 
     <h5>PLAYLISTS</h5>
@@ -38,19 +48,18 @@
 <script>
   let music = MusicKit.getInstance();
 
-  // This is called with or without authorization: 
+  // This is called with or without authorization:
   music.player.play();
 
   // This ensures user authorization before calling play():
-  music.authorize().then(function () {
+  music.authorize().then(function() {
     music.player.play();
   });
 
   // You can wrap any method to ensure authorization before calling:
-  music.authorize().then(function () {
-    music.api.library.albums.then(function (cloudAlbums) {
+  music.authorize().then(function() {
+    music.api.library.albums.then(function(cloudAlbums) {
       // user's cloudAlbums
     });
   });
-
 </script>
